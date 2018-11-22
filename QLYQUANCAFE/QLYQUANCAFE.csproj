@@ -89,6 +89,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Account_BLL.cs" />
     <Compile Include="BLL\Customer_BLL.cs" />
     <Compile Include="BLL\DataRport.cs" />
     <Compile Include="BLL\Employees_BLL.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="BLL\TableQL_BLL.cs" />
     <Compile Include="BLL\TypeAssistant.cs" />
     <Compile Include="Connect\ConnectDB.cs" />
+    <Compile Include="DTO\Account_DTO.cs" />
     <Compile Include="DTO\Customer_DTO.cs" />
     <Compile Include="DTO\Employees_DTO.cs" />
     <Compile Include="DTO\OrderDrink_DTO.cs" />
@@ -138,6 +140,12 @@
     <Compile Include="Form\ReportBaoCao.Designer.cs">
       <DependentUpon>ReportBaoCao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\TaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ReportBaoCao.resx">
       <DependentUpon>ReportBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\TaiKhoan.resx">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>

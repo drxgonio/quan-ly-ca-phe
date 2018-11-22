@@ -38,6 +38,8 @@
             this.PassWord = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbdatabase = new System.Windows.Forms.ComboBox();
+            this.rBAdmin = new System.Windows.Forms.RadioButton();
+            this.rBUser = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // cmbHostName
@@ -117,15 +119,37 @@
             // 
             // cmbdatabase
             // 
+            this.cmbdatabase.Enabled = false;
             this.cmbdatabase.FormattingEnabled = true;
             this.cmbdatabase.Items.AddRange(new object[] {
-            "QuanLyQuanCaPhe",
-            "admin"});
+            "QuanLyQuanCaPhe"});
             this.cmbdatabase.Location = new System.Drawing.Point(311, 27);
             this.cmbdatabase.Name = "cmbdatabase";
             this.cmbdatabase.Size = new System.Drawing.Size(121, 21);
             this.cmbdatabase.TabIndex = 16;
-            this.cmbdatabase.Text = "admin";
+            this.cmbdatabase.Text = "QuanLyQuanCaPhe";
+            // 
+            // rBAdmin
+            // 
+            this.rBAdmin.AutoSize = true;
+            this.rBAdmin.Location = new System.Drawing.Point(134, 172);
+            this.rBAdmin.Name = "rBAdmin";
+            this.rBAdmin.Size = new System.Drawing.Size(65, 17);
+            this.rBAdmin.TabIndex = 19;
+            this.rBAdmin.Text = "Quan Ly";
+            this.rBAdmin.UseVisualStyleBackColor = true;
+            // 
+            // rBUser
+            // 
+            this.rBUser.AutoSize = true;
+            this.rBUser.Checked = true;
+            this.rBUser.Location = new System.Drawing.Point(319, 172);
+            this.rBUser.Name = "rBUser";
+            this.rBUser.Size = new System.Drawing.Size(73, 17);
+            this.rBUser.TabIndex = 20;
+            this.rBUser.TabStop = true;
+            this.rBUser.Text = "Nhan Vien";
+            this.rBUser.UseVisualStyleBackColor = true;
             // 
             // Login
             // 
@@ -135,6 +159,8 @@
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
             this.ClientSize = new System.Drawing.Size(467, 261);
+            this.Controls.Add(this.rBUser);
+            this.Controls.Add(this.rBAdmin);
             this.Controls.Add(this.cmbdatabase);
             this.Controls.Add(this.cmbHostName);
             this.Controls.Add(this.btnIP);
@@ -162,5 +188,7 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.ComboBox cmbdatabase;
+        private System.Windows.Forms.RadioButton rBAdmin;
+        private System.Windows.Forms.RadioButton rBUser;
     }
 }

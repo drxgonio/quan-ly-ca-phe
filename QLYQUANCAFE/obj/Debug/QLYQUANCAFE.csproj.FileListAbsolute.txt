@@ -209,3 +209,4 @@ C:\Users\User\Desktop\QLYQUANCAFE\QLYQUANCAFE\obj\Debug\QLYQUANCAFE.Form.Custome
 C:\Users\User\Desktop\QLYQUANCAFE\QLYQUANCAFE\obj\Debug\QLYQUANCAFE.Form.ThongKe.resources
 C:\Users\User\Desktop\QLYQUANCAFE\QLYQUANCAFE\obj\Debug\QLYQUANCAFE.MainForm.resources
 C:\Users\User\Desktop\QLYQUANCAFE\QLYQUANCAFE\obj\Debug\QLYQUANCAFE.Login.resources
+C:\Users\User\Desktop\QLYQUANCAFE\QLYQUANCAFE\obj\Debug\QLYQUANCAFE.Form.TaiKhoan.resources

@@ -38,7 +38,7 @@ namespace QLYQUANCAFE.Form
                 row.Cells[3].Value = b["_id"].AsObjectId;
                 gridviewSanPham.Rows.Add(row);             
             }
-            //gridviewSanPham.AllowUserToAddRows = false;
+          
         }
         //Lấy Thông tin Products
         private Products_DTO LayTTSP()

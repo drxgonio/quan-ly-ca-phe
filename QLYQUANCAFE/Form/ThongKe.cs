@@ -34,7 +34,7 @@ namespace QLYQUANCAFE.Form
             var array = reult["retval"].AsBsonArray;
             foreach (var document in array)
             {
-                DataGridViewRow row = (DataGridViewRow)gridviewNV.Rows[0].Clone();
+                DataGridViewRow row = (DataGridViewRow)gridviewThongKe.Rows[0].Clone();
                 // row.Cells[0].Value = b["_id"].AsObjectId;
                 row.Cells[0].Value = document["tenBan"].AsString;
                 row.Cells[1].Value = (document["soHoaDon"].AsInt64).ToString() ;
@@ -43,13 +43,14 @@ namespace QLYQUANCAFE.Form
                 row.Cells[4].Value = (document["tenSanPham"].AsBsonArray).ToString();
                 row.Cells[5].Value = (document["gia"].AsDouble).ToString();
                 row.Cells[6].Value = document["_id"].AsObjectId;
-                gridviewNV.Rows.Add(row);
+                gridviewThongKe.Rows.Add(row);
             }
 
         }
 
         private void btnChon_Click(object sender, EventArgs e)
         {
+            gridviewThongKe.Rows.Clear();
             LoadGridView();
         }
     }

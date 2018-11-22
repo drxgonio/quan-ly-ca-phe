@@ -36,17 +36,50 @@ namespace QLYQUANCAFE.Connect
         //MongoClient client = new MongoClient("mongodb://NhanVien:123@127.0.0.1/QuanLyQuanCaPhe");
        
         public IMongoDatabase database;
+        public void Connect1()
+        {
+
+
+            try
+            {
+                MongoClient client = new MongoClient("mongodb://" + userName + ":" + password + "@" + hostname + ":27017/" + QLCF + "");
+                database = client.GetDatabase("QuanLyQuanCaPhe");
+                bool isMongo = database.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(1000);
+                if (isMongo)
+                {
+                    isCorrect = true;
+
+                }
+                else
+                {
+                    isCorrect = false;
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể kết nối tới Cơ Sở Dữ Liệu !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
         public void Connect()
         {
            
 
             try
             {
+                userName = "admin";
+                password = "123";
                  MongoClient client = new MongoClient("mongodb://" + userName + ":" + password + "@" +hostname+ ":27017/"+ QLCF + "");
                 database = client.GetDatabase("QuanLyQuanCaPhe");
                 bool isMongo = database.RunCommandAsync((Command<BsonDocument>)"{ping:1}").Wait(1000);
                 if (isMongo)
-                { isCorrect= true; }
+                {
+                    isCorrect = true;
+                    
+                }
                 else
                 {
                     isCorrect = false;

@@ -39,6 +39,7 @@
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTaiKhoan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -47,14 +48,15 @@
             this.rb2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rb3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelTest = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelTest.SuspendLayout();
@@ -73,9 +75,10 @@
             this.barButtonItem6,
             this.barButtonItem7,
             this.barButtonItem8,
-            this.btnDangXuat});
+            this.btnDangXuat,
+            this.btnTaiKhoan});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 10;
+            this.ribbon.MaxItemId = 11;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -169,11 +172,21 @@
             this.btnDangXuat.Caption = "Đăng Xuất";
             this.btnDangXuat.Enabled = false;
             this.btnDangXuat.Id = 9;
-            this.btnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.Image")));
+            this.btnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.Image")));
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
+            // 
+            // btnTaiKhoan
+            // 
+            this.btnTaiKhoan.Caption = "Tài Khoản";
+            this.btnTaiKhoan.Id = 10;
+            this.btnTaiKhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiKhoan.ImageOptions.Image")));
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTaiKhoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaiKhoan_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -223,7 +236,8 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rb3});
+            this.rb3,
+            this.rbTaiKhoan});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Thống kê";
             // 
@@ -233,6 +247,13 @@
             this.rb3.ItemLinks.Add(this.barButtonItem7);
             this.rb3.Name = "rb3";
             this.rb3.Text = "ribbonPageGroup4";
+            // 
+            // rbTaiKhoan
+            // 
+            this.rbTaiKhoan.Enabled = false;
+            this.rbTaiKhoan.ItemLinks.Add(this.btnTaiKhoan);
+            this.rbTaiKhoan.Name = "rbTaiKhoan";
+            this.rbTaiKhoan.Text = "ribbonPageGroup2";
             // 
             // ribbonStatusBar
             // 
@@ -251,29 +272,18 @@
             this.panelMain.Size = new System.Drawing.Size(880, 500);
             this.panelMain.TabIndex = 2;
             // 
-            // label1
+            // panelTest
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(21, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(849, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cửa hàng Cà phê...Vui lòng đăng nhập để sử dụng hệ thống!!!!";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(332, 295);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 33);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nhóm 9";
+            this.panelTest.BackColor = System.Drawing.Color.Transparent;
+            this.panelTest.Controls.Add(this.label3);
+            this.panelTest.Controls.Add(this.label1);
+            this.panelTest.Controls.Add(this.label5);
+            this.panelTest.Controls.Add(this.label2);
+            this.panelTest.Controls.Add(this.label4);
+            this.panelTest.Location = new System.Drawing.Point(3, 20);
+            this.panelTest.Name = "panelTest";
+            this.panelTest.Size = new System.Drawing.Size(877, 480);
+            this.panelTest.TabIndex = 5;
             // 
             // label3
             // 
@@ -287,17 +297,17 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "GV: Nguyễn Thành Sơn";
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(406, 380);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(343, 33);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Phan Văn Trí -16110496";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label1.Location = new System.Drawing.Point(21, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(849, 33);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cửa hàng Cà phê...Vui lòng đăng nhập để sử dụng hệ thống!!!!";
             // 
             // label5
             // 
@@ -311,18 +321,29 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Trần Thị Liên - 16110xxx";
             // 
-            // panelTest
+            // label2
             // 
-            this.panelTest.BackColor = System.Drawing.Color.Transparent;
-            this.panelTest.Controls.Add(this.label3);
-            this.panelTest.Controls.Add(this.label1);
-            this.panelTest.Controls.Add(this.label5);
-            this.panelTest.Controls.Add(this.label2);
-            this.panelTest.Controls.Add(this.label4);
-            this.panelTest.Location = new System.Drawing.Point(3, 20);
-            this.panelTest.Name = "panelTest";
-            this.panelTest.Size = new System.Drawing.Size(877, 480);
-            this.panelTest.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(332, 295);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 33);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nhóm 9";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(406, 380);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(343, 33);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Phan Văn Trí -16110496";
             // 
             // MainForm
             // 
@@ -377,5 +398,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelTest;
         public DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnTaiKhoan;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbTaiKhoan;
     }
 }

@@ -55,7 +55,7 @@ namespace QLYQUANCAFE.Form
                 row.Cells[1].Value = (document["NgaySinh"].AsDateTime).ToString();
                 row.Cells[2].Value = document["DiaChi"].AsString;
                 row.Cells[3].Value = (document["DienThoai"].AsInt64).ToString();
-                row.Cells[4].Value = document["MatKhau"].AsString;
+                row.Cells[4].Value = document["soThe"].AsString;
                 row.Cells[5].Value = document["_id"].AsObjectId;
                 gridviewNV.Rows.Add(row);
             }

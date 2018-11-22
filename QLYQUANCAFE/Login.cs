@@ -79,25 +79,44 @@ namespace QLYQUANCAFE
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             conn.ConectIP(txtTaiKhoan.Text,txtPass.Text,cmbHostName.Text,cmbdatabase.Text);
-            conn.Connect();
+            conn.Connect1();
             if(conn.isCorrect==true)
             {
-                if(cmbdatabase.Text== "QuanLyQuanCaPhe")
-                  flag = 2;
+                if (rBUser.Checked == true && rBAdmin.Checked == false && txtTaiKhoan.Text != "admin")//Dang nhap la User
+                {
+                    flag = 2;
+                    MessageBox.Show("Đăng nhập thành công!!!!");
+                    this.Dispose();
+                }
                 else
-                    flag = 0;
-                MessageBox.Show("ok");
-                
-                this.Dispose();
+                {
+                    if (rBUser.Checked == false && rBAdmin.Checked == true && txtTaiKhoan.Text == "admin")
+                    {
+                        flag = 0;
+                        MessageBox.Show("Đăng nhập thành công!!!!");
+
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        flag = 1;
+                        MessageBox.Show("Sai Chức vụ truy cập ..Vui lòng chọn lại chức vụ!!!");
+                        this.Dispose();
+                    }
+
+                }
+             
                
             }
             else
             {
                 flag = 1;
-                MessageBox.Show(" ko ok");
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!!!");
             }
 
 
         }
+
+        
     }
 }

@@ -25,6 +25,7 @@ namespace QLYQUANCAFE
         TableQL tb = new TableQL();
         Customer cu = new Customer();
         ThongKe tk = new ThongKe();
+        TaiKhoan tkhoan = new TaiKhoan();
         int f1 = 1;
 
         public MainForm()
@@ -40,6 +41,7 @@ namespace QLYQUANCAFE
             this.panelMain.Controls.Remove(pd);
             this.panelMain.Controls.Remove(cu);
             this.panelMain.Controls.Remove(tk);
+            this.panelMain.Controls.Remove(tkhoan);
             this.panelMain.Controls.Remove(panelTest);
             this.panelMain.Controls.Add(mn);
         }
@@ -52,6 +54,7 @@ namespace QLYQUANCAFE
             this.panelMain.Controls.Remove(pd);
             this.panelMain.Controls.Remove(cu);
             this.panelMain.Controls.Remove(tk);
+            this.panelMain.Controls.Remove(tkhoan);
             this.panelMain.Controls.Remove(panelTest);
             this.panelMain.Controls.Add(nv);
         }
@@ -64,6 +67,7 @@ namespace QLYQUANCAFE
             this.panelMain.Controls.Remove(tb);
             this.panelMain.Controls.Remove(cu);
             this.panelMain.Controls.Remove(tk);
+            this.panelMain.Controls.Remove(tkhoan);
             this.panelMain.Controls.Remove(panelTest);
             this.panelMain.Controls.Add(pd);
         }
@@ -76,6 +80,7 @@ namespace QLYQUANCAFE
             this.panelMain.Controls.Remove(pd);
             this.panelMain.Controls.Remove(cu);
             this.panelMain.Controls.Remove(tk);
+            this.panelMain.Controls.Remove(tkhoan);
             this.panelMain.Controls.Remove(panelTest);
             this.panelMain.Controls.Add(tb);
         }
@@ -88,6 +93,7 @@ namespace QLYQUANCAFE
             this.panelMain.Controls.Remove(tb);
             this.panelMain.Controls.Remove(pd);
             this.panelMain.Controls.Remove(tk);
+            this.panelMain.Controls.Remove(tkhoan);
             this.panelMain.Controls.Remove(panelTest);
             this.panelMain.Controls.Add(cu);
         }
@@ -100,9 +106,21 @@ namespace QLYQUANCAFE
             this.panelMain.Controls.Remove(tb);
             this.panelMain.Controls.Remove(pd);
             this.panelMain.Controls.Remove(cu);
+            this.panelMain.Controls.Remove(tkhoan);
             this.panelMain.Controls.Remove(panelTest);
-    
             this.panelMain.Controls.Add(tk);
+        }
+        private void btnTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.panelMain.Controls.Remove(mn);
+            this.panelMain.Controls.Remove(lg);
+            this.panelMain.Controls.Remove(nv);
+            this.panelMain.Controls.Remove(tb);
+            this.panelMain.Controls.Remove(pd);
+            this.panelMain.Controls.Remove(cu);
+            this.panelMain.Controls.Remove(tk);
+            this.panelMain.Controls.Remove(panelTest);
+            this.panelMain.Controls.Add(tkhoan);
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -128,6 +146,7 @@ namespace QLYQUANCAFE
                     rb1.Enabled = true;
                     rb2.Enabled = true;
                     rb3.Enabled = true;
+                    rbTaiKhoan.Enabled = true;
                 }
             }
         }
@@ -140,8 +159,11 @@ namespace QLYQUANCAFE
             rb1.Enabled = false;
             rb2.Enabled = false;
             rb3.Enabled = false;
+            rbTaiKhoan.Enabled = true;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(panelTest);
         }
+
+       
     }
 }

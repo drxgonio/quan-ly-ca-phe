@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridviewNV = new System.Windows.Forms.DataGridView();
-            this.btnChon = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNgay = new System.Windows.Forms.TextBox();
+            this.gridviewThongKe = new System.Windows.Forms.DataGridView();
             this.tenBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.khachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,15 +36,18 @@
             this.tenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gridviewNV)).BeginInit();
+            this.btnChon = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNgay = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gridviewThongKe)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridviewNV
+            // gridviewThongKe
             // 
-            this.gridviewNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridviewNV.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.gridviewNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridviewNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridviewThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridviewThongKe.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gridviewThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridviewThongKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenBan,
             this.soHoaDon,
             this.khachHang,
@@ -55,34 +55,10 @@
             this.tenSanPham,
             this.gia,
             this.id});
-            this.gridviewNV.Location = new System.Drawing.Point(3, 130);
-            this.gridviewNV.Name = "gridviewNV";
-            this.gridviewNV.Size = new System.Drawing.Size(874, 358);
-            this.gridviewNV.TabIndex = 22;
-            // 
-            // btnChon
-            // 
-            this.btnChon.Location = new System.Drawing.Point(144, 64);
-            this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(75, 23);
-            this.btnChon.TabIndex = 23;
-            this.btnChon.Text = "Chọn";
-            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(30, 27);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(56, 13);
-            this.labelControl1.TabIndex = 24;
-            this.labelControl1.Text = "Chọn ngày:";
-            // 
-            // txtNgay
-            // 
-            this.txtNgay.Location = new System.Drawing.Point(119, 20);
-            this.txtNgay.Name = "txtNgay";
-            this.txtNgay.Size = new System.Drawing.Size(137, 20);
-            this.txtNgay.TabIndex = 25;
+            this.gridviewThongKe.Location = new System.Drawing.Point(3, 130);
+            this.gridviewThongKe.Name = "gridviewThongKe";
+            this.gridviewThongKe.Size = new System.Drawing.Size(874, 358);
+            this.gridviewThongKe.TabIndex = 22;
             // 
             // tenBan
             // 
@@ -120,6 +96,30 @@
             this.id.Name = "id";
             this.id.Visible = false;
             // 
+            // btnChon
+            // 
+            this.btnChon.Location = new System.Drawing.Point(144, 64);
+            this.btnChon.Name = "btnChon";
+            this.btnChon.Size = new System.Drawing.Size(75, 23);
+            this.btnChon.TabIndex = 23;
+            this.btnChon.Text = "Chọn";
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(30, 27);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(56, 13);
+            this.labelControl1.TabIndex = 24;
+            this.labelControl1.Text = "Chọn ngày:";
+            // 
+            // txtNgay
+            // 
+            this.txtNgay.Location = new System.Drawing.Point(119, 20);
+            this.txtNgay.Name = "txtNgay";
+            this.txtNgay.Size = new System.Drawing.Size(137, 20);
+            this.txtNgay.TabIndex = 25;
+            // 
             // ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,10 +127,10 @@
             this.Controls.Add(this.txtNgay);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnChon);
-            this.Controls.Add(this.gridviewNV);
+            this.Controls.Add(this.gridviewThongKe);
             this.Name = "ThongKe";
             this.Size = new System.Drawing.Size(880, 500);
-            ((System.ComponentModel.ISupportInitialize)(this.gridviewNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridviewThongKe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +138,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridviewNV;
+        private System.Windows.Forms.DataGridView gridviewThongKe;
         private DevExpress.XtraEditors.SimpleButton btnChon;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txtNgay;
