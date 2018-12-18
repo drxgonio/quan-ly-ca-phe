@@ -1,0 +1,88 @@
+use QuanLyQuanCaPhe
+var role = {
+  
+    "role" : "Employees",
+
+    "privileges" : [ 
+            {
+                "resource" : {
+                    "db" : "QuanLyQuanCaPhe",
+                    "collection" : "OrderDrink"
+                },
+                "actions" : [ 
+                    "insert"
+                    
+                ]
+            }, 
+            {
+                "resource" : {
+                    "db" : "QuanLyQuanCaPhe",
+                    "collection" : "Products"
+                },
+                "actions" : [ 
+                    "insert",
+                    "update"
+                    
+                ]
+            },
+        {
+            "resource" : {
+                "db" : "QuanLyQuanCaPhe",
+                "collection" : "Table"
+            },
+            "actions" : [ 
+                "insert",
+                "update",
+                "remove"
+            ]
+        }
+    
+],
+    "roles" : [ 
+        {
+            "role" : "read",
+            "db" : "QuanLyQuanCaPhe"
+        }
+    ]
+}
+db.createRole( role );
+
+use QuanLyQuanCaPhe
+var user = {
+  'user' : 'tricute',
+  'pwd' : '123',
+  'roles' : [
+      {'role' : 'Employees', 'db' : 'QuanLyQuanCaPhe'}
+  ],
+       mechanisms:[  
+  "SCRAM-SHA-1"
+ ]
+}
+db.createUser(user);
+
+
+///
+use QuanLyQuanCaPhe
+db.system.js.save(
+{_id:"CreateUser",
+    value: function (_name,_pass,_role)
+    {
+        var user = {
+  'user' : _name,
+  'pwd' : _pass,
+  'roles' : [
+      {'role' : _role, 'db' : 'QuanLyQuanCaPhe'}
+  ],
+       mechanisms:[  
+  "SCRAM-SHA-1"
+ ]
+}
+
+return db.createUser(user);
+
+    }
+}
+);
+use QuanLyQuanCaPhe
+db.loadServerScripts();
+CreateUser("quanlytest5","123","Employees");

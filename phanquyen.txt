@@ -1,0 +1,51 @@
+//t?o rolé
+use admin
+db.system.roles.save(
+{
+    "_id" : "QuanLyQuanCaPhe.executeEval",
+    "role" : "executeEval",
+    "db" : "QuanLyQuanCaPhe",
+    "privileges" : [ 
+        {
+            "resource" : {
+                "anyResource" : true
+            },
+            "actions" : [ 
+                "anyAction"
+            ]
+        }
+    ],
+    "roles" : []
+}
+
+//Hàm create User
+db.system.js.save(
+{_id:"CreateUser",
+    value: function (_name,_pass,_role)
+    {
+        var user = {
+  'user' : _name,
+  'pwd' : _pass,
+  'roles' : [
+      {'role' : _role, 'db' : 'QuanLyQuanCaPhe'}
+  ],
+       mechanisms:[  
+  "SCRAM-SHA-1"
+ ]
+}
+
+db.createUser(user);
+return db.grantRolesToUser(
+    _name,
+    [
+      { role: "executeEval", db: "QuanLyQuanCaPhe" }
+    ]
+)
+    }
+}
+);
+
+db.loadServerScripts();
+CreateUser("quanlytest5","abc","User");
+
+///////
